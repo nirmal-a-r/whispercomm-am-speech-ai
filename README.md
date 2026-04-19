@@ -11,8 +11,8 @@
 **School of Artificial Intelligence — Amrita Vishwa Vidyapeetham, Coimbatore**  
 Course: Software-Defined Communication Systems (23AID203) | Batch A-09
 
-| Roll No. | Name |
-|---|---|
+| Contributors |
+|---|
  Nirmal Ramamoorthy *(Project Lead)* |
  N. Sanjana Reddy |
 
