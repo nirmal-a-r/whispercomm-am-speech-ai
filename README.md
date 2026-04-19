@@ -3,13 +3,13 @@
 # 📡 WhisperComm
 ### An End-to-End AM Communication System with AI-Enhanced Speech Recovery
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/whispercomm/blob/main/WhisperComm_Jupyter_NOTEBOOK.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nirmal-a-r/whispercomm/blob/main/WhisperComm_Jupyter_NOTEBOOK.ipynb)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 **School of Artificial Intelligence — Amrita Vishwa Vidyapeetham, Coimbatore**  
-Course: Software-Defined Communication Systems (23AID203) | Batch A-09
+
 
 | Contributors |
 |---|
