@@ -16,7 +16,7 @@ Course: Software-Defined Communication Systems (23AID203) | Batch A-09
  Nirmal Ramamoorthy *(Project Lead)* |
  N. Sanjana Reddy |
 
-*Supervised by Dr. Jyothish Lal G, Assistant Professor (Sr.Gr.),Amrita School of AI*
+*Supervised by Dr. Jyothish Lal G, Assistant Professor (Sr.Gr.),Amrita School of AI, Coimbatore*
 
 </div>
 
