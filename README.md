@@ -196,7 +196,7 @@ This project is released under the MIT License for educational and research use.
 <div align="center">
 
 **WhisperComm** — School of Artificial Intelligence | Amrita Vishwa Vidyapeetham  
-23AID203 | Batch A-09 | September 2025
+
 
 *"The most effective AI-enhanced communication systems are those where deep learning augments — rather than replaces — rigorous classical engineering."*
 
