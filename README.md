@@ -34,46 +34,57 @@ Speech from the LibriSpeech corpus is transmitted over a simulated AM channel co
 
 ## 🏗️ System Architecture
 
+```text
 Clean Speech (LibriSpeech)
-│
-▼
-┌─────────────────────┐
-│  Pre-Modulation LPF │  ← 3.8 kHz Butterworth (anti-aliasing)
-│  Normalise to [-1,1]│
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│   AM Modulator      │  ← s(t) = [1 + m(t)] · cos(2π · 4000 · t)
-│   fc = 4,000 Hz     │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐     SNR ∈ {25, 18, 12, 8, 5} dB
-│   Pink Noise Channel│  ← 1/f PSD via FFT spectral shaping
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Synchronous Demod.  │  ← r(t) × cos(2π·fc·t) → LPF → DC removal
-│ (Coherent Receiver) │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────────────────────────┐
-│       Dynamic SNR Routing Gate          │
-│   SNR > 5 dB  →  Classical DSP only    │
-│   SNR ≤ 5 dB  →  DNS-64 Denoiser       │
-└─────────┬───────────────────────────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Whisper-large-v3    │  ← Beam search (num_beams=5), English
-│ ASR Transcription   │
-└─────────┬───────────┘
-          │
-          ▼
-     WER Evaluation
+        │
+        ▼
+┌──────────────────────────────┐
+│ Pre-Modulation LPF           │
+│ • 3.8 kHz Butterworth        │
+│ • Anti-aliasing filter       │
+│ • Normalize to [-1, 1]       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ AM Modulator                 │
+│ s(t) = [1 + m(t)] cos(2πft)  │
+│ fc = 4000 Hz                 │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Pink Noise Channel           │
+│ • 1/f PSD (FFT shaping)      │
+│ • SNR = {25,18,12,8,5} dB    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Synchronous Demodulation     │
+│ • Multiply with carrier      │
+│ • LPF + DC removal           │
+│ • Coherent receiver          │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Dynamic SNR Routing          │
+│ • SNR > 5 dB → DSP only      │
+│ • SNR ≤ 5 dB → DNS-64        │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Whisper-large-v3             │
+│ • Beam search (5 beams)      │
+│ • English transcription      │
+└──────────────┬───────────────┘
+               │
+               ▼
+        WER Evaluation
+```
+
 ---
 
 ## 📊 Results
